@@ -31,7 +31,24 @@ function operate(operator, num1, num2) {
     } else if (operator = '*') {
         multiple(num1, num2);
     } else if (operator = '/') {
-        divide(num1, num2)
+        divide(num1, num2);
     }
 }
 
+// create number grid
+
+function generateGrid() {
+    const gridContainer = document.querySelector('.numbers');
+    
+    let number = 1;
+
+    for (let i = 0; i < 9; i++){ 
+        const gridItem = document.createElement('div');
+        gridItem.classList.add('grid-item');
+        gridItem.textContent = number;
+        gridContainer.appendChild(gridItem);
+        number++;
+    }
+}
+
+generateGrid();
