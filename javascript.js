@@ -37,18 +37,19 @@ function operate(operator, num1, num2) {
 
 // create number grid
 
-function generateGrid() {
-    const gridContainer = document.querySelector('.numbers');
+function generateNumbersGrid() {
+    const numberGridContainer = document.querySelector('.numbers');
     
-    let number = 1;
+    let number = 0;
 
-    for (let i = 0; i < 9; i++){ 
+    for (let i = 0; i < 10; i++){ 
         const gridItem = document.createElement('div');
         gridItem.classList.add('grid-item');
         gridItem.textContent = number;
-        gridContainer.appendChild(gridItem);
+        numberGridContainer.appendChild(gridItem);
         number++;
     }
 }
 
-generateGrid();
+
+generateNumbersGrid();
