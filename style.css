@@ -1,46 +1,53 @@
-.calculatorContainer,
-.calculatorDisplay,
-.number,
-.operator,
-.clearButton {
-    border: 2px solid;
 
-}
 
 #calculatorContainer {
     display: flex;
     flex-direction: column;
-    width: 300px;
-    height: 500px;
+    width: 400px;
+    background-color: black;
 }
 
 .calculatorDisplay {
-    margin: 25px;
-    padding: 20px;
-    text-align: center;
-    font-size: 40px;
+    background-color: gray;
+    padding: 10px;
+    margin: 10px 10px 0px 10px; 
+    text-align: right;
+    font-size: 80px;
+    font-weight: bold;
+    border-bottom: 5px solid;
 }
 
-.clearButton {
-    text-align: center;
-    padding: 10px;
-    margin-left: 35px;
-    margin-right: 35px;
-    margin-bottom: -20px;
-    font-size: 30px;
-}
 
 .numbersContainer {
-    margin: 0px 15px 15px 15px;
+
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
+    justify-content: space-evenly;
 }
 
-.number,
-.operator {
+.operand,
+.operator,
+.zero,
+.equals,
+.clear {
     font-size: 30px;
     text-align: center;
-    padding: 15px;
+    padding: 20px;
+    margin: 1px;
     flex-grow: 1;
+}
+
+
+.operand,
+.operator {
+    width: 80px;
+}
+
+.zero {
+    width: 241px;
+}
+
+.clear {
+    width: 259px;
 }
