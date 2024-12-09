@@ -1,6 +1,8 @@
 .calculatorContainer,
 .calculatorDisplay,
-.number {
+.number,
+.operator,
+.clearButton {
     border: 2px solid;
 
 }
@@ -15,15 +17,27 @@
 .calculatorDisplay {
     height: 100px;
     margin: 25px;
+}
 
+.clearButton {
+    text-align: center;
+    padding: 10px;
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-bottom: -20px;
 }
 
 .numbersContainer {
-    margin: 15px;
+    margin: 0px 15px 15px 15px;
     display: flex;
     flex-wrap: wrap;
     padding: 20px;
 }
 
-.number {
+.number,
+.operator {
+    font-size: 30px;
+    text-align: center;
+    padding: 15px;
+    flex-grow: 1;
 }
