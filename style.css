@@ -15,8 +15,10 @@
 }
 
 .calculatorDisplay {
-    height: 100px;
     margin: 25px;
+    padding: 25px;
+    text-align: center;
+    font-size: 40px;
 }
 
 .clearButton {
@@ -25,6 +27,7 @@
     margin-left: 35px;
     margin-right: 35px;
     margin-bottom: -20px;
+    font-size: 30px;
 }
 
 .numbersContainer {
