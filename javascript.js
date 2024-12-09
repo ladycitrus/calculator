@@ -6,6 +6,7 @@ const operatorBtn = document.querySelectorAll(".operator");
 const clearBtn = document.querySelector(".clear");
 const zeroBtn = document.querySelector(".zero");
 const equalsBtn = document.querySelector(".equals");
+const operandDisplay = document.querySelector(".operandDisplay");
 
 
 function add(num1, num2) {
@@ -41,24 +42,29 @@ function operate(operator, num1, num2) {
 // show contents of operand button 
 operandBtn.forEach(button => {
     button.addEventListener("click", () => {
-    alert(`${button.innerHTML}`);
+        operandDisplay.textContent = `${button.innerHTML}`;
+        num1 = `${button.innerHTML}`;
     });
 });
 
 // show contents of operator button
 operatorBtn.forEach(button => {
     button.addEventListener("click", () => {
-    alert(`${button.innerHTML}`);
+        alert(`${button.innerHTML}`);
     });
 });
 
 // show contents of equals, zero, clear button
 clearBtn.addEventListener("click", () => {
-    alert(`${clearBtn.innerHTML}`);
+    operandDisplay.textContent = "";
+    num1 = "";
+    num2 = "";
+    operator = "";
 });
 
 zeroBtn.addEventListener("click", () => {
-    alert(`${zeroBtn.innerHTML}`);
+    operandDisplay.textContent = `${zeroBtn.innerHTML}`;
+    num1 = `${zeroBtn.innerHTML}`;
 });
 
 equalsBtn.addEventListener("click", () => {
