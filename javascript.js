@@ -45,7 +45,7 @@ operandBtn.forEach(button => {
     button.addEventListener("click", () => {
         if (result !== null) {
             num1 = result;
-            num2 = Number(button.innerHTML);
+            num2 = num2 === null ? Number(button.innerHTML) : Number(num2 + button.innerHTML);
             operandDisplay.textContent = num2;
         } else if (operator === null) {
             //assign numeric value to num1
@@ -68,6 +68,7 @@ operatorBtn.forEach(button => {
         if (num1 !== null && num2 !== null) {
             result = operate(operator, num1, num2);
             operandDisplay.textContent = result;
+            num2 = null;
         }
         else if (num1 !== null) {
             //assign operator string to operator value
@@ -97,7 +98,8 @@ zeroBtn.addEventListener("click", () => {
 equalsBtn.addEventListener("click", () => {
     if (num1 !== null && num2 !== null) {
         result = operate(operator, num1, num2);
-        operandDisplay.textContent = result;
+        const formattedNumber = (Math.round(result * 100) / 100).toFixed(2);
+        operandDisplay.textContent = formattedNumber;
     }
 });
     
