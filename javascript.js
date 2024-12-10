@@ -76,7 +76,7 @@ clearBtn.addEventListener("click", () => {
 });
 
 zeroBtn.addEventListener("click", () => {
-    if (operator === "/" && num1 != null) {
+    if (operator === "/" && num1 !== null) {
         operandDisplay.textContent = "Invalid";
     } else {
         num1 = num1 === null ? Number(zeroBtn.innerHTML) : Number(num1 + zeroBtn.innerHTML);
@@ -84,7 +84,8 @@ zeroBtn.addEventListener("click", () => {
 });
 
 equalsBtn.addEventListener("click", () => {
-    operandDisplay.textContent = operate(operator, num1, num2);
+    result = operate(operator, num1, num2);
+    operandDisplay.textContent = result;
 });
     
 
