@@ -79,7 +79,8 @@ zeroBtn.addEventListener("click", () => {
     if (operator === "/" && num1 !== null) {
         operandDisplay.textContent = "Invalid";
     } else {
-        num1 = num1 === null ? Number(zeroBtn.innerHTML) : Number(num1 + zeroBtn.innerHTML);
+        num1 = Number(num1 + zeroBtn.innerHTML);
+        operandDisplay.innerText = num1;
     }
 });
 
