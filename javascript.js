@@ -44,10 +44,14 @@ operandBtn.forEach(button => {
     button.addEventListener("click", () => {
         if (operator === null) {
             //assign numeric value to num1
-            num1 = num1 === null ? Number(button.innerHTML) : Number(num1 + button.innerHTML);
-            operandDisplay.textContent = num1;
+            num1 = num1 === null ? button.innerHTML : num1 + button.innerHTML;
+            num1 = Number(num1);
+            operandDisplay.innerHTML = num1;
         } else {
-            num2 = num2 === null ? Number(button.innerHTML) : NUmber(num2 + button.innerHTML);
+            // assign numeric value to num2
+            num2 = num2 === null ? button.innerHTML : num2 + button.innerHTML;
+            num2 = Number(num2);
+            operandDisplay.textContent = num2;
         }
         
     });
@@ -56,21 +60,27 @@ operandBtn.forEach(button => {
 // show contents of operator button
 operatorBtn.forEach(button => {
     button.addEventListener("click", () => {
-        operator = `${button.innerHTML}`;
+        if (num1 !== null) {
+            //assign operator string to operator value
+            operator = operator === null ? button.innerHTML : operator;
+        } 
     });
 });
 
 // show contents of equals, zero, clear button
 clearBtn.addEventListener("click", () => {
     operandDisplay.textContent = "";
-    num1 = "";
-    num2 = "";
-    operator = "";
+    num1 = null;
+    num2 = null;
+    operator = null;
 });
 
 zeroBtn.addEventListener("click", () => {
-    operandDisplay.textContent = `${zeroBtn.innerHTML}`;
-    num1 = `${zeroBtn.innerHTML}`;
+    if (operator === "/" && num1 != null) {
+        operandDisplay.textContent = "Invalid";
+    } else {
+        num1 = num1 === null ? Number(zeroBtn.innerHTML) : Number(num1 + zeroBtn.innerHTML);
+    }
 });
 
 equalsBtn.addEventListener("click", () => {
