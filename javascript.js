@@ -1,6 +1,7 @@
 let num1 = null;
 let num2 = null;
 let operator = null;
+let result = null;
 const operandBtn = document.querySelectorAll(".operand");
 const operatorBtn = document.querySelectorAll(".operator");
 const clearBtn = document.querySelector(".clear");
@@ -25,7 +26,7 @@ function divide(num1, num2) {
     return num1 / num2; // return division of nums
 }
 
-// takes operator and two numbers then calls function
+// takes operator and two numbers then calls and returns function
 function operate(operator, num1, num2) {
     switch (operator) {
         case "+":
@@ -60,6 +61,7 @@ operandBtn.forEach(button => {
 // show contents of operator button
 operatorBtn.forEach(button => {
     button.addEventListener("click", () => {
+        
         if (num1 !== null) {
             //assign operator string to operator value
             operator = operator === null ? button.innerHTML : operator;
@@ -85,8 +87,10 @@ zeroBtn.addEventListener("click", () => {
 });
 
 equalsBtn.addEventListener("click", () => {
-    result = operate(operator, num1, num2);
-    operandDisplay.textContent = result;
+    if (num1 !== null && num2 !== null) {
+        result = operate(operator, num1, num2);
+        operandDisplay.textContent = result;
+    }
 });
     
 
