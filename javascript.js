@@ -10,19 +10,19 @@ const operandDisplay = document.querySelector(".operandDisplay");
 
 
 function add(num1, num2) {
-    return num1 + num2;
+    return num1 + num2; // return sum of nums
 }
 
 function subtract(num1, num2) {
-    return num1 - num2;
+    return num1 - num2; // return subtractions of nums
 }
 
 function multiply(num1, num2) {
-    return num1 * num2;
+    return num1 * num2; // return multiplication of nums
 }
 
 function divide(num1, num2) {
-    return num1 / num2;
+    return num1 / num2; // return division of nums
 }
 
 // takes operator and two numbers then calls function
