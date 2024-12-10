@@ -1,6 +1,6 @@
-let num1;
-let num2;
-let operator;
+let num1 = null;
+let num2 = null;
+let operator = null;
 const operandBtn = document.querySelectorAll(".operand");
 const operatorBtn = document.querySelectorAll(".operator");
 const clearBtn = document.querySelector(".clear");
@@ -29,28 +29,34 @@ function divide(num1, num2) {
 function operate(operator, num1, num2) {
     switch (operator) {
         case "+":
-            add(num1, num2);
+            return add(num1, num2);
         case "-":
-            subtract(num1, num2);
+            return subtract(num1, num2);
         case "*":
-            multiply(num1, num2);
+            return multiply(num1, num2);
         case "/":
-            divide(num1, num2);
+            return divide(num1, num2);
     }
 }
 
 // show contents of operand button 
 operandBtn.forEach(button => {
     button.addEventListener("click", () => {
-        operandDisplay.textContent = `${button.innerHTML}`;
-        num1 = `${button.innerHTML}`;
+        if (operator === null) {
+            //assign numeric value to num1
+            num1 = num1 === null ? Number(button.innerHTML) : Number(num1 + button.innerHTML);
+            operandDisplay.textContent = num1;
+        } else {
+            num2 = num2 === null ? Number(button.innerHTML) : NUmber(num2 + button.innerHTML);
+        }
+        
     });
 });
 
 // show contents of operator button
 operatorBtn.forEach(button => {
     button.addEventListener("click", () => {
-        alert(`${button.innerHTML}`);
+        operator = `${button.innerHTML}`;
     });
 });
 
@@ -68,7 +74,7 @@ zeroBtn.addEventListener("click", () => {
 });
 
 equalsBtn.addEventListener("click", () => {
-    alert(`${equalsBtn.innerHTML}`);
+    operandDisplay.textContent = operate(operator, num1, num2);
 });
     
 
