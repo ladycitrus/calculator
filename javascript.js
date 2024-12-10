@@ -43,7 +43,11 @@ function operate(operator, num1, num2) {
 // show contents of operand button 
 operandBtn.forEach(button => {
     button.addEventListener("click", () => {
-        if (operator === null) {
+        if (result !== null) {
+            num1 = result;
+            num2 = Number(button.innerHTML);
+            operandDisplay.textContent = num2;
+        } else if (operator === null) {
             //assign numeric value to num1
             num1 = num1 === null ? button.innerHTML : num1 + button.innerHTML;
             num1 = Number(num1);
@@ -61,8 +65,11 @@ operandBtn.forEach(button => {
 // show contents of operator button
 operatorBtn.forEach(button => {
     button.addEventListener("click", () => {
-        
-        if (num1 !== null) {
+        if (num1 !== null && num2 !== null) {
+            result = operate(operator, num1, num2);
+            operandDisplay.textContent = result;
+        }
+        else if (num1 !== null) {
             //assign operator string to operator value
             operator = operator === null ? button.innerHTML : operator;
         } 
@@ -75,6 +82,7 @@ clearBtn.addEventListener("click", () => {
     num1 = null;
     num2 = null;
     operator = null;
+    result = null;
 });
 
 zeroBtn.addEventListener("click", () => {
