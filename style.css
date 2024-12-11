@@ -9,15 +9,16 @@
 
 .calculatorDisplay {
     background-color: gray;
-    padding: 10px;
     margin: 10px 10px -10px 10px; 
     border-bottom: 5px solid;
+    height: 100px;
 }
 
 .operandDisplay {
     text-align: right;
     font-size: 80px;
     font-weight: bold;
+    padding: 10px;
 }
 
 
@@ -29,11 +30,7 @@
     justify-content: space-evenly;
 }
 
-.operand,
-.operator,
-.zero,
-.equals,
-.clear {
+button {
     font-size: 30px;
     text-align: center;
     padding: 20px;
@@ -48,11 +45,12 @@
 }
 
 .zero {
-    width: 241px;
+    width: 160px;
 }
 
-.clear {
-    width: 259px;
+.clear,
+.backspace {
+    width: 125px;
 }
 
 .operator,
@@ -61,10 +59,12 @@
 }
 
 .operand,
-.zero {
+.zero,
+.decimal {
     background-color: teal;
 }
 
-.clear {
+.clear,
+.backspace {
     background-color: lightblue;
 }
