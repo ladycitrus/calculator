@@ -44,10 +44,6 @@ button {
     width: 80px;
 }
 
-.zero {
-    width: 160px;
-}
-
 .clear,
 .backspace {
     width: 125px;
@@ -59,7 +55,6 @@ button {
 }
 
 .operand,
-.zero,
 .decimal {
     background-color: teal;
 }
