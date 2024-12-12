@@ -7,7 +7,8 @@ const operatorBtn = document.querySelectorAll(".operator");
 const clearBtn = document.querySelector(".clear");
 const equalsBtn = document.querySelector(".equals");
 const operandDisplay = document.querySelector(".operandDisplay");
-const backspaceBtn = document.querySelector(".backspace")
+const backspaceBtn = document.querySelector(".backspace");
+const decimalBtn = document.querySelector(".decimal");
 
 function add(num1, num2) {
     return num1 + num2; // return sum of nums
@@ -100,7 +101,7 @@ equalsBtn.addEventListener("click", () => {
     
 
 backspaceBtn.addEventListener("click", () => {
-    if (operandDisplay.textContent !== "" && operandDisplay.textContent !== formattedNumber) {
+    if (operandDisplay.textContent !== "" && operandDisplay.textContent !== result) {
       operandDisplay.textContent = operandDisplay.textContent.slice(0, -1);
     }
       
