@@ -113,4 +113,8 @@ backspaceBtn.addEventListener("click", () => {
     }
     
   });
+
+  decimalBtn.addEventListener("click", () => {
+
+  });
   
