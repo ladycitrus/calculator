@@ -82,7 +82,7 @@ operatorBtn.forEach(button => {
     });
 });
 
-// show contents of equals, zero, clear button
+// clears and resets all variables 
 clearBtn.addEventListener("click", () => {
     operandDisplay.textContent = "";
     num1 = null;
@@ -94,14 +94,15 @@ clearBtn.addEventListener("click", () => {
 equalsBtn.addEventListener("click", () => {
     if (num1 !== null && num2 !== null) {
         result = operate(operator, num1, num2);
-        const formattedNumber = Math.round(result * 100) / 100;
+        let formattedNumber = Math.round(result * 100) / 100;
         operandDisplay.textContent = formattedNumber;
     }
 });
     
 
 backspaceBtn.addEventListener("click", () => {
-    if (operandDisplay.textContent !== "" && operandDisplay.textContent !== result) {
+    const currentOperand = operandDisplay.textContent;
+    if (currentOperand !== "" && currentOperand !== result) {
       operandDisplay.textContent = operandDisplay.textContent.slice(0, -1);
     }
       
