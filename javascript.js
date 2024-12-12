@@ -99,14 +99,16 @@ equalsBtn.addEventListener("click", () => {
 });
     
 
-// backspaceBtn.addEventListener("click", () => {
-//   if (operandDisplay.textContent !== result || operandDisplay.textContent  !== "") {
-//     operandDisplay.textContent = operandDisplay.innerHTML.substring(0, operandDisplay.innerHTML.length - 1);
-//     if (num1 !== null && num2 === null) {
-//         num1 = operandDisplay.textContent;
-//     } else {
-//         num2 = operandDisplay.textContent;
-//     }
+backspaceBtn.addEventListener("click", () => {
+    if (operandDisplay.textContent !== "" && operandDisplay.textContent !== formattedNumber) {
+      operandDisplay.textContent = operandDisplay.textContent.slice(0, -1);
+    }
+      
+    if (num2 === null) {
+      num1 = operandDisplay.textContent ? Number(operandDisplay.textContent) : null;
+    } else {
+      num2 = operandDisplay.textContent ? Number(operandDisplay.textContent) : null;
+    }
     
-//   }
-// }); 
+  });
+  
