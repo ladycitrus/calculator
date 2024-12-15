@@ -96,6 +96,7 @@ equalsBtn.addEventListener("click", () => {
         result = operate(operator, num1, num2);
         let formattedNumber = Math.round(result * 100) / 100;
         operandDisplay.textContent = formattedNumber;
+
     }
 });
     
@@ -115,6 +116,20 @@ backspaceBtn.addEventListener("click", () => {
   });
 
   decimalBtn.addEventListener("click", () => {
-
-  });
-  
+    if (num1 === null) {
+    num1 = (num1 ?? "0").toString();
+      if (!num1.includes(".")) {
+       
+        num1 = num1 !== null ? num1.toString() + decimalBtn.innerHTML : "0" + decimalBtn.innerHTML;
+        operandDisplay.textContent = num1;
+        console.log(num1, num2);
+       } 
+      } else {
+        num2 = (num2 ?? "0").toString();
+        if (!num2.includes(".")) {
+          num2 = num2 !== null ? num2.toString() + decimalBtn.innerHTML : "0" + decimalBtn.innerHTML;
+          operandDisplay.textContent = num2;
+          
+       }
+    }
+   });
